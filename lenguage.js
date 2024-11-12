@@ -78,3 +78,5 @@ const keyboards = {
         }
       }
 }
+
+export {phrases, keyboards};
