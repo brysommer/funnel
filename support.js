@@ -1,4 +1,4 @@
-import bot from "./app.js";
+import { bot } from "./app.js";
 
 const support = () => {
 
@@ -10,10 +10,13 @@ bot.on('message', (msg) => {
 
     // Якщо повідомлення від адміністратора
     if (chatId == 269694206 && msg.reply_to_message) {
+        console.log('log1')
         const userChatId = userSupportChats.get(msg.reply_to_message.message_id);
         if (userChatId) {
             bot.sendMessage(userChatId, msg.text);
         } else {
+
+            console.log('log')
             const message = msg.text.split(' ');
 
             bot.sendMessage(message[0], message[1]);
